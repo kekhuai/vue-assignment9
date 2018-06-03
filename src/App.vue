@@ -3,7 +3,7 @@
         <form>
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                    <app-full-name :firstName="firstName" :lastName="lastName"></app-full-name>
+                    <app-full-name v-model="fullName"></app-full-name>
 
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -49,7 +49,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: {{ firstName }} {{ lastName }}</p>
+                        <p>Full Name: {{ fullName }}</p>
                         <p>Mail: {{ email }}</p>
                         <p>Password: {{ password }}</p>
                         <p>Store in Database?: {{ storeToDb ? 'Yes' : 'No' }}</p>
@@ -66,8 +66,7 @@
     export default {
         data() {
             return {
-                firstName: '',
-                lastName: '',
+                fullName: 'Natthaphon Phanit',
                 email: '',
                 password: '',
                 storeToDb: false,
